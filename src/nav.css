@@ -40,6 +40,9 @@ body{
     padding: 20px 30px;
     background: #fff;
 }
+.nav .container .mid_bar .contant .navicon{
+    display: none;
+}
 .nav .container .mid_bar .contant .logo img{
     margin-top: 10px;
     width: 150px;
@@ -73,7 +76,7 @@ body{
     display: flex;
     align-items: center;
 }
-.nav .container .mid_bar .contant .icon{
+.nav .container .mid_bar .contant .icons .icon{
     padding: 10px 10px;
     margin-right: 10px;
     border: 1px solid #bdbdbd;
@@ -87,6 +90,7 @@ body{
     justify-content: space-between;
     padding: 0px 30px;
     background: #0163d2;
+    flex-wrap: wrap;
 }
 .nav .container .bottam_bar .user_detail{
     display: flex;
@@ -140,4 +144,60 @@ body{
     margin-top: 8px;
     font-weight: 600;
     letter-spacing: 1px;
+}
+@media(max-width:850px){
+    .nav .container .mid_bar .contant .navicon{
+        display: block;
+    }
+    .nav .container .mid_bar .contant .navicon .navopen{
+        margin-top: 5px;
+        font-size: 22px;
+    }
+    .nav .container .mid_bar .contant .navicon .closenav{
+        margin-top: 5px;
+        font-size: 22px;
+    }
+    .nav .container .mid_bar .contant .search_bar {
+        background-color: #fff;
+        width: 100%;
+        position: absolute;
+        margin-top: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .nav .container .mid_bar .contant .search_bar input{
+        width: 80%;
+        padding: 14px;
+        outline: none;
+        border: 1px solid #bdbdbd;
+    }
+    .nav .container .mid_bar .contant .icons{
+        margin-top: -0px;
+    }
+    .nav .container .mid_bar .contant .icons .icon{
+        border: none;
+        font-size: 16px;
+    }.nav .container .mid_bar .contant .logo img{
+        margin-top: -0px;
+        width: 100px;
+        transition: 0.5s;
+        cursor: pointer;
+    }
+    .nav .container .bottam_bar{
+        margin-top: 45px;
+        flex-direction: column;
+        display: none;
+    }
+    .nav .container .bottam_bar.active{
+        display: block;
+    }
+    .nav .container .bottam_bar ul{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+    .nav .container .bottam_bar ul li{
+        margin-top: 20px;
+    }
 }

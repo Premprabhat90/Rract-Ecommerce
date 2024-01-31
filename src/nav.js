@@ -1,15 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./nav.css";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa6";
 import { FaRegUser } from "react-icons/fa";
+import { FaBars } from "react-icons/fa6";
+import { MdClose } from "react-icons/md";
 
 const Nav = ({ auth, setAuth, userDetail }) => {
+  //Handling navbar
+  const [openNav, setOpenNav] = useState(false);
+  // Handling logout
   const logout = () => {
     setAuth(false);
   };
-
+  // Handling open navbar
+  const navopen = () =>{
+    setOpenNav(true)
+  }
+  const closenav = () => {
+    setOpenNav(false)
+  }
   return (
     <div className="nav">
       <div className="container">
@@ -37,6 +48,22 @@ const Nav = ({ auth, setAuth, userDetail }) => {
         </div>
         <div className="mid_bar">
           <div className="contant">
+            <div className="navicon">
+              {
+                openNav ?
+                <>
+                <div className="closenav" onClick={closenav}>
+                <MdClose />
+                </div>
+                </>
+                :
+                <>
+                <div className="navopen" onClick={navopen}>
+                  <FaBars />
+                </div>
+                </>
+              }
+            </div>
             <div className="logo">
               <img src="/image/logo.jpeg" alt="logo" />
             </div>
@@ -56,7 +83,7 @@ const Nav = ({ auth, setAuth, userDetail }) => {
             </div>
           </div>
         </div>
-        <div className="bottam_bar">
+        <div className={`bottam_bar ${openNav && 'active'}`}>
           <div className="user_detail">
             <div className="icon">
               <FaRegUser />
